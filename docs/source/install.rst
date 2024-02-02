@@ -59,7 +59,7 @@ To build a minimal synApp::
 
 - Clone the simepics module into synApps/support::
     
-    $ git clone https://github.com/tomography/simepics.git
+    $ git clone https://github.com/decarlof/simepics.git
 
 - Edit configure/RELEASE add this line to the end::
     
