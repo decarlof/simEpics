@@ -27,17 +27,17 @@ To build a minimal synApp::
 
     $ cd ~/epics
 
-- Download in ~/epics `assemble_synApps <https://github.com/EPICS-synApps/support/blob/master/assemble_synApps.sh>`_.sh
+- Download in ~/epics `assemble_synApps <https://github.com/EPICS-synApps/assemble_synApps/blob/18fff37055bb78bc40a87d3818777adda83c69f9/assemble_synApps>`_.sh
 - Edit the assemble_synApps.sh script as follows:
     #. Set FULL_CLONE=True
     #. Set EPICS_BASE to point to the location of EPICS base.  This could be on APSshare (the default), or a local version you built.
     
-    For simepics you need 
+    For simepics you need (X-Y-Z are the latest versions)
     
-    #. ASYN=R4-37
-    #. AUTOSAVE=R5-10
-    #. BUSY=R1-7-2
-    #. XXX=R6-1
+    #. ASYN=RX-Y
+    #. AUTOSAVE=RX-Y
+    #. BUSY=RX-Y-Z
+    #. XXX=RX-Y
 
     You can comment out all of the other modules (ALLENBRADLEY, ALIVE, etc.)
 
@@ -48,13 +48,6 @@ To build a minimal synApp::
 - This will create a synApps/support directory::
 
     $ cd synApps/support/
-
-- Edit asyn-RX-YY/configure/RELEASE to comment out the lines starting with::
-    
-    IPAC=$(SUPPORT)/
-    SNCSEQ=$(SUPPORT)/
-
-.. warning:: If building for RedHat8 uncomment **TIRPC=YES** in asyn-RX-YY/configure/CONFIG_SITE
 
 
 - Clone the simepics module into synApps/support::
@@ -68,6 +61,19 @@ To build a minimal synApp::
 - Edit Makefile add this line to the end of the MODULE_LIST::
     
     MODULE_LIST += SIMEPICS
+
+- Verify that synApps/support/simepics/configure/RELEASE::
+
+    EPICS_BASE
+    SUPPORT
+
+are set to the correct EPICS_BASE and SUPPORT directories and that::
+
+    BUSY
+    AUTOSAVE
+    ASYN
+
+point to the version installed.
 
 - Run the following commands::
 
