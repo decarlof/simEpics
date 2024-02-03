@@ -45,12 +45,12 @@ To build a minimal synApp::
 
     $ assemble_synApps.sh
 
-- This will create a synApps/support directory::
+- This will create a git/synApps/support directory::
 
-    $ cd synApps/support/
+    $ cd git/synApps/support/
 
 
-- Clone the simepics module into synApps/support::
+- Clone the simepics module into git/synApps/support::
     
     $ git clone https://github.com/decarlof/simepics.git
 
@@ -62,7 +62,7 @@ To build a minimal synApp::
     
     MODULE_LIST += SIMEPICS
 
-- Verify that synApps/support/simepics/configure/RELEASE::
+- Verify that git/synApps/support/simepics/configure/RELEASE::
 
     EPICS_BASE
     SUPPORT
@@ -101,7 +101,7 @@ and install the required python packages::
 
 Finally you can build **simEpics** with::
 
-    (simepics) $ cd ~/epics/synApps/support/simEpics/
+    (simepics) $ cd ~/epics/git/synApps/support/simEpics/
     (simepics) $ python setup.py install
 
 To run the python server::
