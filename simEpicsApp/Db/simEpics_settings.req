@@ -1,0 +1,39 @@
+# This file is used by autosave to determine what PVs to save
+# It is also used by txmOptics to determine what PVs to create
+
+# This file contains all of the PVs used by the txmoptics base class.
+
+# Lines that begin with #controlPV are not saved by autosave,
+# but they are used by txmoptics.  
+# These PVs are not saved in the txmoptics configuration file.
+
+###############################
+# TomoScan, Camera  PV Prefixes 
+###############################
+$(P)$(R)CameraPVPrefix
+
+##################
+# Example PV Names
+##################
+$(P)$(R)ExamplePVName
+
+###############
+# Yes/No select
+###############
+$(P)$(R)YesNoSelect
+
+###############
+# AM served PVs
+###############
+$(P)$(R)simEpicsPv1
+$(P)$(R)simEpicsPv2
+$(P)$(R)simEpicsPv3
+$(P)$(R)simEpicsPv4
+$(P)$(R)simEpicsPv5
+$(P)$(R)simEpicsPv6
+
+##############################
+# AM status via Channel Access
+##############################
+#controlPV $(P)$(R)SimEpicsStatus
+#controlPV $(P)$(R)Watchdog

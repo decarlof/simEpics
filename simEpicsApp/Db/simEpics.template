@@ -1,0 +1,99 @@
+# Database for EPICS PVS for txm optics control
+# This database contains all of the PVs used by the txmoptics base class.
+
+#############
+# PV Prefixes 
+#############
+
+record(stringout, "$(P)$(R)CameraPVPrefix")
+{
+   field(VAL,  "$(CAMERA_PREFIX)")
+}
+
+##################
+# Example PV Names
+##################
+
+record(stringout, "$(P)$(R)ExamplePVName")
+{
+   field(VAL,  "$(EXAMPLE_PV_NAME)")
+}
+
+###############
+# Yes/No select
+###############
+
+record(mbbo, "$(P)$(R)YesNoSelect") {
+  field(DTYP, "Raw Soft Channel")
+  field(NOBT, "3")
+  field(ZRVL, "0x0")
+  field(ONVL, "0x1")
+  field(ZRST, "Yes")
+  field(ONST, "No")
+}
+
+###############
+# AM served PVs
+###############
+
+record(stringout, "$(P)$(R)simEpicsPv1")
+{
+   field(VAL,  "Unknown")
+}
+
+record(ao, "$(P)$(R)simEpicsPv2")
+{
+   field(PREC,  "2")
+}
+
+record(ao, "$(P)$(R)simEpicsPv3")
+{
+   field(PREC, "2")
+   field(EGU,  "microns")
+}
+
+record(ao, "$(P)$(R)simEpicsPv4")
+{
+   field(PREC, "2")
+   field(EGU,  "microns")
+}
+
+record(stringout, "$(P)$(R)simEpicsPv5")
+{
+   field(VAL,  "Unknown")
+}
+
+record(ao, "$(P)$(R)simEpicsPv6")
+{
+   field(PREC, "2")
+   field(EGU,  "mm")
+}
+
+##############################
+# AM status via Channel Access
+##############################
+
+record(waveform,"$(P)$(R)SimEpicsStatus") 
+{
+   field(FTVL, "UCHAR")
+   field(NELM, "256")
+}
+
+record(calcout, "$(P)$(R)Watchdog")
+{
+   field(SCAN, "1 second")
+   field(INPA, "$(P)$(R)Watchdog.VAL NPP")
+   field(CALC, "A-1")
+   field(OCAL, "A>0?1:0")
+   field(OOPT, "On Change")
+   field(DOPT, "Use OCAL")
+   field(OUT,  "$(P)$(R)ServerRunning PP")
+}
+
+record(bi, "$(P)$(R)ServerRunning")
+{
+   field(ZNAM, "Stopped")
+   field(ZSV,  "MAJOR")
+   field(ONAM, "Running")
+   field(OSV,  "NO_ALARM")
+}
