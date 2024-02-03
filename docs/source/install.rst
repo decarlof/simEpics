@@ -29,6 +29,7 @@ To build a minimal synApp::
 
 - Download in ~/epics `assemble_synApps <https://github.com/EPICS-synApps/assemble_synApps/blob/18fff37055bb78bc40a87d3818777adda83c69f9/assemble_synApps>`_.sh
 - Edit the assemble_synApps.sh script as follows:
+
     #. Set FULL_CLONE=True
     #. Set EPICS_BASE to point to the location of EPICS base.  This could be on APSshare (the default), or a local version you built.
     
@@ -43,14 +44,14 @@ To build a minimal synApp::
 
 - Run::
 
-    $ assemble_synApps.sh
+    $ assemble_synApps.sh --dir=synApps
 
-- This will create a git/synApps/support directory::
+- This will create a synApps/support directory::
 
-    $ cd git/synApps/support/
+    $ cd synApps/support/
 
 
-- Clone the simepics module into git/synApps/support::
+- Clone the simepics module into synApps/support::
     
     $ git clone https://github.com/decarlof/simepics.git
 
@@ -62,7 +63,7 @@ To build a minimal synApp::
     
     MODULE_LIST += SIMEPICS
 
-- Verify that git/synApps/support/simepics/configure/RELEASE::
+- Verify that synApps/support/simepics/configure/RELEASE::
 
     EPICS_BASE
     SUPPORT
@@ -101,7 +102,7 @@ and install the required python packages::
 
 Finally you can build **simEpics** with::
 
-    (simepics) $ cd ~/epics/git/synApps/support/simEpics/
+    (simepics) $ cd ~/epics/synApps/support/simEpics/
     (simepics) $ python setup.py install
 
 To run the python server::
