@@ -59,10 +59,6 @@ To build a minimal synApp::
     
     SIMEPICS=$(SUPPORT)/simepics
 
-- Edit Makefile add this line to the end of the MODULE_LIST::
-    
-    MODULE_LIST += SIMEPICS
-
 - Verify that synApps/support/simepics/configure/RELEASE::
 
     EPICS_BASE
