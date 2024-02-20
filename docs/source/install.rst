@@ -29,9 +29,6 @@ To build a minimal synApp::
 
 - Download in ~/epics `assemble_synApps <https://github.com/EPICS-synApps/assemble_synApps/blob/18fff37055bb78bc40a87d3818777adda83c69f9/assemble_synApps>`_.sh
 - Edit the assemble_synApps.sh script as follows:
-
-    #. Set EPICS_BASE to point to the location of EPICS base.  This could be on APSshare (the default), or a local version you built.
-    
     For simepics you need (X-Y-Z are the latest versions)
     
     #. ASYN=RX-Y
@@ -43,7 +40,7 @@ To build a minimal synApp::
 
 - Run::
 
-    $ assemble_synApps.sh --dir=synApps
+    $ assemble_synApps.sh --dir=synApps --base=/home/beams/FAST/epics/epics-base
 
 - This will create a synApps/support directory::
 
