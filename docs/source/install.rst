@@ -65,9 +65,10 @@ You can comment out all of the other modules (ALLENBRADLEY, ALIVE, etc.)
 
 are set to the correct EPICS_BASE and SUPPORT directories and that::
 
-    BUSY
     AUTOSAVE
     ASYN
+    BUSY
+    XXX
 
 point to the version installed.
 
