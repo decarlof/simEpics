@@ -22,6 +22,7 @@ Build EPICS base
     $ make distclean (do this in case there was an OS update)
     $ make -sj
     
+.. warning:: if you get a *configure/os/CONFIG.rhel9-x86_64.Common: No such file or directory* error issue this in your csh termimal: $ **setenv EPICS_HOST_ARCH linux-x86_64**
 
 Build a minimal synApps
 -----------------------
